@@ -1,6 +1,6 @@
 import React from 'react';
-import jQuery from 'jquery';
 import Project from "./Project";
+import { _fetchData } from '../api';
 
 export default class ProjectList extends React.Component
 {
@@ -12,36 +12,29 @@ export default class ProjectList extends React.Component
         };
     }
 
-    componentWillMount() {
-        this._fetchProjects()
+    componentDidMount() {
+      _fetchData('projects').then((projects) => {
+          this.setState({projects})
+      })
     }
 
     render() {
-        const projects = this._getProjects();
         return(
             <div className="container col-8 pt-10">
                 <h2 className="text-center">Portfolio</h2>
                 <div className="filter-body columns col-12">
-                    {projects}
+                    {
+                        this.state.projects.length > 0 ? this.state.projects.map((project) => {
+                          return <Project {...project} key={project.id}/>
+                        }) :
+                            <div className="centered">
+                              <div className="loading centered">&nbsp;</div>
+                              <br/>
+                              <p className="text-bold">In coming !</p>
+                            </div>
+                    }
                 </div>
             </div>
         );
     }
-
-    _fetchProjects() {
-        jQuery.ajax({
-            method: 'GET',
-            url: 'http://localhost:3000/project',
-            success: (projects) => {
-                this.setState({projects})
-            }
-        });
-    }
-
-    _getProjects() {
-        return this.state.projects.map((project) => {
-            return <Project {...project} key={project.id}/>
-        })
-    }
-
 }

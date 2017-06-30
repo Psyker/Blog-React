@@ -1,50 +1,53 @@
 import React from 'react';
-import jQuery from 'jquery';
 import CommentBox from "../components/CommentBox";
+import { _fetchDataById } from '../api';
 
 export default class ProjectPage extends React.Component {
-    constructor() {
-        super() ;
+  constructor() {
+    super() ;
 
-        this.state = {
-            project: []
-        }
+    this.state = {
+      id: null,
+      title: null,
+      description: null,
+      comments: [],
     }
+  }
 
-    componentWillMount() {
-        this._fetchProject()
-    }
+  componentDidMount() {
+    _fetchDataById('projects', this.props.match.params.id).then((project) => {
+      console.log(project);
+      this.setState({
+        id: project.id,
+        title: project.title,
+        description: project.description,
+        comments: project.comments
+      })
+    })
+  }
 
-    render() {
-        const project = this.state.project;
-        return (
-            <div>
-                <div className="nav-padding container">
-                    <div>
-                        {project.description}
-                    </div>
-                    <div>
-                        {project.title}
-                    </div>
+  render() {
+    const {id, description, title} = this.state;
+    return (
+
+        <div>
+            <div className="nav-padding container">
+                <div>
+                  {description}
+                </div>
+                <div>
+                  {title}
+                </div>
+              {
+                id ?
                     <div className="columns bg-grey">
                         <div className="column col-5 centered">
-                            <CommentBox/>
+                            <CommentBox project={this.state}/>
                         </div>
-                    </div>
-                </div>
+                    </div> : null
+              }
             </div>
-        )
-    }
-
-    _fetchProject() {
-        jQuery.ajax({
-            method: 'GET',
-            url: '/project/' + this.props.match.params.id,
-            success: (project) => {
-                this.setState(() => {
-                    return {project: project}
-                })
-            }
-        });
-    }
+        </div>
+    )
+  }
 }

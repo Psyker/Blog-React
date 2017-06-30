@@ -21,7 +21,7 @@ export default class CommentForm extends React.Component {
                 </div>
                 <div className="form-group">
                     <label className="form-label" >Message</label>
-                    <textarea className="form-input" ref={c => this._body = c} onChange={this._getCharacterCount} placeholder="Votre commentaire" rows="3"></textarea>
+                    <textarea className="form-input" ref={c => this._body = c} onChange={this._getCharacterCount} placeholder="Votre commentaire" rows="3"/>
                 </div>
                 <p>{this.state.characters} caractères.</p>
                 <div className="form-group">

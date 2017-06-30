@@ -1,0 +1,11 @@
+{
+  "projects": [
+    { "id": 1, "title": "Projet1", "description": "typicode" },
+    { "id": 2, "title": "Projet2", "description": "typicode" },
+    { "id": 3, "title": "Projet3", "description": "typicode" },
+    { "id": 4, "title": "Projet4", "description": "typicode" }
+  ],
+  "comments": [
+    { "id": 1, "author": "some comment", "content": "sdfsdf" }
+  ]
+}

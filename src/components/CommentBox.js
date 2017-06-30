@@ -2,6 +2,8 @@ import React from 'react';
 import Comment from './Comment'
 import jQuery from 'jquery'
 import CommentForm from "./CommentForm";
+import { admin_username, admin_password } from "../config/parameters.json"
+import { _postComment } from '../api'
 
 export default class CommentBox extends React.Component {
     constructor () {
@@ -14,8 +16,10 @@ export default class CommentBox extends React.Component {
         this._addComment = this._addComment.bind(this);
     }
 
-    componentWillMount() {
-        this._fetchComments();
+    componentDidMount() {
+        this.setState({
+          comments: this.props.project.comments
+        })
     }
 
     render() {
@@ -30,22 +34,14 @@ export default class CommentBox extends React.Component {
     }
 
     _addComment(commentAuthor, commentBody) {
+        const {comments} = this.state;
         const comment = {
-            id: this.state.comments.length + 1,
             author: commentAuthor,
-            content: commentBody,
+            message: commentBody,
+            project: this.props.project
         };
-
-        jQuery.ajax({
-            'method': 'POST',
-            'url': 'http://localhost:3000/comments',
-            'data': comment,
-            'success': () => {
-                this.setState({
-                    comments: this.state.comments.concat([comment])
-                })
-            }
-        });
+        _postComment(comment);
+        console.log(comment)
     }
 
     _getCommentsTitle(commentCount) {
@@ -62,15 +58,5 @@ export default class CommentBox extends React.Component {
         return this.state.comments.map((comment) => {
             return <Comment {...comment} key={comment.id}/>
         })
-    }
-
-    _fetchComments() {
-        jQuery.ajax({
-            'method': 'GET',
-            'url': 'http://localhost:3000/comments',
-            success:  (comments) => {
-                this.setState({comments})
-            }
-        });
     }
 }
