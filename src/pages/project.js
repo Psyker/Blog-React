@@ -20,23 +20,32 @@ export default class ProjectPage extends React.Component {
         id: project.id,
         title: project.title,
         description: project.description,
+        type: project.type,
         comments: project.comments
       })
     })
   }
 
   render() {
-    const {id, description, title} = this.state;
+    const {id, description, title, type} = this.state;
     return (
 
         <div>
-            <div className="nav-padding container">
-                <div>
-                  {description}
-                </div>
-                <div>
-                  {title}
-                </div>
+            <div className="nav-padding-project container">
+                <section className="section section-hero overview">
+                  <section className="grid-hero container grid-960 text-center">
+                    <h1 className="overview-title">{title}</h1>
+                    <h2 className="overview-subtitle">{description}</h2>
+                    <label className="chip">
+                      {type}
+                    </label>
+                    <div className="columns">
+                      <div className="column">
+                        <a href="https://github.com/Psyker" className="btn btn-primary">See on Github</a>&nbsp;
+                      </div>
+                    </div>
+                  </section>
+                </section>
               {
                 id ?
                     <div className="columns bg-grey">
