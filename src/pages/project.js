@@ -16,7 +16,6 @@ export default class ProjectPage extends React.Component {
 
   componentDidMount() {
     _fetchDataById('projects', this.props.match.params.id).then((project) => {
-      console.log(project);
       this.setState({
         id: project.id,
         title: project.title,
@@ -44,7 +43,10 @@ export default class ProjectPage extends React.Component {
                         <div className="column col-5 centered">
                             <CommentBox project={this.state}/>
                         </div>
-                    </div> : null
+                    </div> :
+                    <div className="centered">
+                      <div className="loading centered">&nbsp;</div>
+                    </div>
               }
             </div>
         </div>

@@ -30,7 +30,7 @@ export function _fetchDataById(type, param) {
 }
 
 export function _postComment(comment) {
-  jQuery.ajax({
+  return jQuery.ajax({
     method: 'POST',
     url: 'http://localhost:8000/api/comments/new',
     data: comment,

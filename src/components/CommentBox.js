@@ -1,8 +1,6 @@
 import React from 'react';
 import Comment from './Comment'
-import jQuery from 'jquery'
 import CommentForm from "./CommentForm";
-import { admin_username, admin_password } from "../config/parameters.json"
 import { _postComment } from '../api'
 
 export default class CommentBox extends React.Component {
@@ -10,7 +8,7 @@ export default class CommentBox extends React.Component {
         super();
 
         this.state = {
-            comments: []
+            comments: [],
         };
 
         this._addComment = this._addComment.bind(this);
@@ -38,10 +36,12 @@ export default class CommentBox extends React.Component {
         const comment = {
             author: commentAuthor,
             message: commentBody,
-            project: this.props.project
+            project: this.props.project.id
         };
-        _postComment(comment);
-        console.log(comment)
+        _postComment(comment).then((comment) => {
+           this.setState({comments: [...comments, comment]})
+        })
+
     }
 
     _getCommentsTitle(commentCount) {
