@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Route, Redirect} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import HomePage from './pages/home';
 import Layout from './layout/layout';
 import ProjectPage from './pages/project'
