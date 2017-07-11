@@ -44,7 +44,7 @@ export default class CommentBox extends React.Component {
 
     }
 
-    _getCommentsTitle(commentCount) {
+     _getCommentsTitle(commentCount) {
         if (commentCount === 0) {
             return 'Aucun commentaires';
         } else if (commentCount === 1) {

@@ -10,8 +10,10 @@ export default class ProjectPage extends React.Component {
       id: null,
       title: null,
       description: null,
+      tags: [],
       comments: [],
-    }
+    };
+
   }
 
   componentDidMount() {
@@ -20,14 +22,14 @@ export default class ProjectPage extends React.Component {
         id: project.id,
         title: project.title,
         description: project.description,
-        type: project.type,
+        tags: project.tags,
         comments: project.comments
       })
     })
   }
 
   render() {
-    const {id, description, title, type} = this.state;
+    const {id, description, title, tags} = this.state;
     return (
 
         <div>
@@ -36,9 +38,11 @@ export default class ProjectPage extends React.Component {
                   <section className="grid-hero container grid-960 text-center">
                     <h1 className="overview-title">{title}</h1>
                     <h2 className="overview-subtitle">{description}</h2>
-                    <label className="chip">
-                      {type}
-                    </label>
+                      {
+                        tags.map((tag) => {
+                          return <p key={tag.id}>{tag.name}</p>
+                        })
+                      }
                     <div className="columns">
                       <div className="column">
                         <a href="https://github.com/Psyker" className="btn btn-primary">See on Github</a>&nbsp;

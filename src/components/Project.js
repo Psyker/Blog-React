@@ -14,7 +14,13 @@ export default class Project extends React.Component
                             </button>
                         </NavLink>
                         <h4 className="card-title">{this.props.title}</h4>
-                        <h6 className="card-subtitle">{this.props.tag}</h6>
+                        <h6 className="card-subtitle">
+                            {
+                                this.props.tags.map((tag) => {
+                                    return tag.name
+                                })
+                            }
+                        </h6>
                     </div>
                 </div>
             </div>
