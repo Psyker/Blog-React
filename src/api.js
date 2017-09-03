@@ -33,12 +33,16 @@ export function _postComment(comment) {
   return jQuery.ajax({
     method: 'POST',
     url: 'http://localhost:8000/api/comments/new',
-    data: comment,
+    data: {
+        'appbundle_comment[author]' : comment.author,
+        'appbundle_comment[message]': comment.message,
+        'appbundle_comment[project]': comment.project
+    },
     headers: {
       "Authorization": 'Basic '+ btoa(admin_username + ":" + admin_password)
     },
-    success: (comment) => {
-      return comment
+    success: (data) => {
+      return data
     }
   })
 }

@@ -17,11 +17,11 @@ export default class CommentForm extends React.Component {
             <form className="pb-10" onSubmit={this._handleSubmit}>
                 <div className="form-group">
                     <label className="form-label" >Name</label>
-                    <input className="form-input" type="text" ref={c => this._author = c} placeholder="Name" />
+                    <input name='appbundle_comment[author]' className="form-input" type="text" ref={c => this._author = c} placeholder="Name" />
                 </div>
                 <div className="form-group">
                     <label className="form-label" >Message</label>
-                    <textarea className="form-input" ref={c => this._body = c} onChange={this._getCharacterCount} placeholder="Votre commentaire" rows="3"/>
+                    <textarea name='appbundle_comment[message]' className="form-input" ref={c => this._body = c} onChange={this._getCharacterCount} placeholder="Votre commentaire" rows="3"/>
                 </div>
                 <p>{this.state.characters} caractères.</p>
                 <div className="form-group">
