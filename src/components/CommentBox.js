@@ -9,6 +9,7 @@ export default class CommentBox extends React.Component {
 
         this.state = {
             comments: [],
+            loading: false
         };
 
         this._addComment = this._addComment.bind(this);
@@ -26,6 +27,7 @@ export default class CommentBox extends React.Component {
             <div>
                 <h3>{this._getCommentsTitle(comments.length)}</h3>
                 <CommentForm addComment={this._addComment}/>
+                {this.state.loading ? <div className="loading loading-lg mt-1"></div> : ''}
                 {comments}
             </div>
         )
@@ -36,12 +38,12 @@ export default class CommentBox extends React.Component {
         const comment = {
             author: commentAuthor,
             message: commentBody,
-            project: this.props.project.id
+            project: this.props.project.id,
         };
+        this.setState({loading: true});
         _postComment(comment).then((comment) => {
-           this.setState({comments: [comment, ...comments ]})
+           this.setState({comments: [comment, ...comments ], loading: false})
         })
-
     }
 
      _getCommentsTitle(commentCount) {

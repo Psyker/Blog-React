@@ -7,6 +7,7 @@ import 'spectre.css/dist/spectre.min.css'
 import 'spectre.css/dist/spectre-icons.min.css'
 import './index.css';
 import './custom.css'
+import 'animate.css/animate.min.css'
 
 
 

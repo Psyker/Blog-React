@@ -31,10 +31,9 @@ export default class ProjectPage extends React.Component {
   render() {
     const {id, description, title, tags} = this.state;
     return (
-
         <div>
             <div className="nav-padding-project container">
-                <section className="section section-hero overview">
+                <section className="section section-hero">
                   <section className="grid-hero container grid-960 text-center">
                     <h1 className="overview-title">{title}</h1>
                     <h2 className="overview-subtitle">{description}</h2>

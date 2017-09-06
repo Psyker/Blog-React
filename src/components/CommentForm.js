@@ -25,7 +25,7 @@ export default class CommentForm extends React.Component {
                 </div>
                 <p>{this.state.characters} caractères.</p>
                 <div className="form-group">
-                    <button type="submit" className="btn btn-primary">Envoyer</button>
+                    <button type="submit" className="btn btn-primary" disabled={this.state.characters <= 0} >Envoyer</button>
                 </div>
             </form>
         )
@@ -34,7 +34,7 @@ export default class CommentForm extends React.Component {
     _getCharacterCount() {
         this.setState({
             characters: this._body.value.length
-        })
+        });
     }
 
     _handleSubmit(event) {
