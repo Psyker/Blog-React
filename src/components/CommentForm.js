@@ -14,7 +14,7 @@ export default class CommentForm extends React.Component {
 
     render() {
         return(
-            <form className="pb-10" onSubmit={this._handleSubmit}>
+            <form onSubmit={this._handleSubmit}>
                 <div className="form-group">
                     <label className="form-label" >Name</label>
                     <input name='appbundle_comment[author]' className="form-input" type="text" ref={c => this._author = c} placeholder="Name" />

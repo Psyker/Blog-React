@@ -20,7 +20,7 @@ export default class ProjectList extends React.Component
 
     render() {
         return (
-            <div className="container col-8 pt-10">
+            <div className="container col-8 mt-2">
                 <h2 className="text-center">Portfolio</h2>
                 <div className="filter-body columns col-12">
                     {
