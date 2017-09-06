@@ -39,7 +39,7 @@ export default class CommentBox extends React.Component {
             project: this.props.project.id
         };
         _postComment(comment).then((comment) => {
-           this.setState({comments: [...comments, comment]})
+           this.setState({comments: [comment, ...comments ]})
         })
 
     }
