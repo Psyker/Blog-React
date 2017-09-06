@@ -39,6 +39,7 @@ export default class CommentBox extends React.Component {
             author: commentAuthor,
             message: commentBody,
             project: this.props.project.id,
+            avatar: `https://api.adorable.io/avatars/40/${commentAuthor}.png`
         };
         this.setState({loading: true});
         _postComment(comment).then((comment) => {

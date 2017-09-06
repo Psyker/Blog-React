@@ -23,6 +23,7 @@ export default class CommentForm extends React.Component {
                     <label className="form-label" >Message</label>
                     <textarea name='appbundle_comment[message]' className="form-input" ref={c => this._body = c} onChange={this._getCharacterCount} placeholder="Votre commentaire" rows="3"/>
                 </div>
+                <input type="hidden" name='appbundle_comment[avatar]'/>
                 <p>{this.state.characters} caractères.</p>
                 <div className="form-group">
                     <button type="submit" className="btn btn-primary" disabled={this.state.characters <= 0} >Envoyer</button>

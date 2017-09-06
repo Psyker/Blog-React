@@ -37,6 +37,7 @@ export function _postComment(comment) {
         'appbundle_comment[author]' : comment.author,
         'appbundle_comment[message]': comment.message,
         'appbundle_comment[project]': comment.project,
+        'appbundle_comment[avatar]': comment.avatar,
     },
     headers: {
       "Authorization": 'Basic '+ btoa(admin_username + ":" + admin_password)

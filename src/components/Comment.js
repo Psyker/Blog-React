@@ -6,7 +6,7 @@ export default class Comment extends React.Component {
             <div className="tile comment animated fadeInDown">
                 <div className="tile-icon">
                     <figure className="avatar">
-                        <img src={`https://api.adorable.io/avatars/122/${this.props.author}.png`} alt=""/>
+                        <img src={this.props.avatar} alt=""/>
                     </figure>
                 </div>
                 <div className="tile-content">
