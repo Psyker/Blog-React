@@ -12,6 +12,7 @@ export default class Layout extends React.Component {
                             <a className="btn btn-link" href="">Projets</a>
                             <a className="btn btn-link" href="">Twitter</a>
                             <a className="btn btn-link" href="">Github</a>
+                            <NavLink className="btn btn-link" to="/login">Connexion</NavLink>
                         </nav>
                     </section>
                 </section>

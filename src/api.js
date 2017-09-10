@@ -48,3 +48,18 @@ export function _postComment(comment) {
   })
 }
 
+export function _login(credentials) {
+  return jQuery.ajax({
+      method: 'POST',
+      url: 'http://localhost:8000/api/login_check',
+      data: {
+        '_username': credentials._username,
+        '_password': credentials._password,
+      },
+      success: (response) => {
+          localStorage.setItem('token', response.token);
+        return response
+      }
+  })
+}
+
