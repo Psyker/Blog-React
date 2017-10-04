@@ -6,9 +6,6 @@ export function _fetchData(type) {
   return jQuery.ajax({
     method: 'GET',
     url: url,
-    headers: {
-      "Authorization": 'Basic '+ btoa(admin_username + ":" + admin_password)
-    },
     success: (data) => {
       return data
     },
@@ -20,9 +17,6 @@ export function _fetchDataById(type, param) {
   return jQuery.ajax({
     method: 'GET',
     url: url,
-    headers: {
-      "Authorization": 'Basic '+ btoa(admin_username + ":" + admin_password)
-    },
     success: (data) => {
       return data
     }
@@ -38,9 +32,6 @@ export function _postComment(comment) {
         'appbundle_comment[message]': comment.message,
         'appbundle_comment[project]': comment.project,
         'appbundle_comment[avatar]': comment.avatar,
-    },
-    headers: {
-      "Authorization": 'Basic '+ btoa(admin_username + ":" + admin_password)
     },
     success: (data) => {
       return data

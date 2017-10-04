@@ -94,6 +94,10 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+animate.css@^3.5.2:
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/animate.css/-/animate.css-3.5.2.tgz#91e668dc069a808e5e499514867b97aae0166c36"
+
 anser@1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/anser/-/anser-1.2.5.tgz#5dcfc956eaa373b9c23010dd20dabec2ce19475b"
@@ -1128,6 +1132,12 @@ buffer@^4.3.0:
     ieee754 "^1.1.4"
     isarray "^1.0.0"
 
+build-parameters@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/build-parameters/-/build-parameters-1.0.1.tgz#d03cf0959bc699a4aa9a0f269c4d2cf472745224"
+  dependencies:
+    colors "^1.1.2"
+
 builtin-modules@^1.0.0, builtin-modules@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/builtin-modules/-/builtin-modules-1.1.1.tgz#270f076c5a72c02f5b65a47df94c5fe3a278892f"
@@ -1353,7 +1363,7 @@ colormin@^1.0.5:
     css-color-names "0.0.4"
     has "^1.0.1"
 
-colors@~1.1.2:
+colors@^1.1.2, colors@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/colors/-/colors-1.1.2.tgz#168a4701756b6a7f51a12ce0c97bfa28c084ed63"
 
@@ -5470,9 +5480,9 @@ spdy@^3.4.1:
     select-hose "^2.0.0"
     spdy-transport "^2.0.18"
 
-spectre.css@^0.2.14:
-  version "0.2.14"
-  resolved "https://registry.yarnpkg.com/spectre.css/-/spectre.css-0.2.14.tgz#4a3f9afd289e8bafcd3e96b13999e08d9e2ebffd"
+spectre.css@^0.4.0:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/spectre.css/-/spectre.css-0.4.3.tgz#0ea9ac4bc874ed3602e58638be30909238e9453a"
 
 sprintf-js@~1.0.2:
   version "1.0.3"

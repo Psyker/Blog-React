@@ -26,7 +26,7 @@ export default class CommentForm extends React.Component {
                 <input type="hidden" name='appbundle_comment[avatar]'/>
                 <p>{this.state.characters} caractères.</p>
                 <div className="form-group">
-                    <button type="submit" className="btn btn-primary" disabled={this.state.characters <= 0} >Envoyer</button>
+                    <button type="submit" className="btn btn-lg" disabled={this.state.characters <= 0} >Envoyer</button>
                 </div>
             </form>
         )

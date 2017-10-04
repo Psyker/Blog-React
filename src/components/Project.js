@@ -5,22 +5,26 @@ export default class Project extends React.Component
 {
     render() {
         return(
-            <div className="column col-6">
-                <div className="filter-item card">
+            <div className="column col-6 col-xs-12">
+                <div className="card">
                     <div className="card-header">
-                        <NavLink to={'/project/' + this.props.id}>
-                            <button className="btn btn-primary float-right">
-                                <i className="icon icon-search"></i>
-                            </button>
-                        </NavLink>
-                        <h4 className="card-title">{this.props.title}</h4>
-                        <h6 className="card-subtitle">
+                        <h4>{this.props.title}</h4>
+                        <small>
                             {
                                 this.props.tags.map((tag) => {
                                     return tag.name
                                 })
                             }
-                        </h6>
+                        </small>
+                    </div>
+                    <div className="card-body"></div>
+                    <div className="card-footer">
+                        <NavLink to={'/project/' + this.props.id}>
+                            <button className="btn btn-primary">
+                                <i className="icon icon-search"></i>
+                                &nbsp; Voir
+                            </button>
+                        </NavLink>
                     </div>
                 </div>
             </div>

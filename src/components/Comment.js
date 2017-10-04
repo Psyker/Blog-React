@@ -3,7 +3,7 @@ import React from 'react';
 export default class Comment extends React.Component {
     render() {
         return (
-            <div className="tile comment animated fadeInDown">
+            <div className="tile comment animated fadeInDown text-dark">
                 <div className="tile-icon">
                     <figure className="avatar">
                         <img src={this.props.avatar} alt=""/>

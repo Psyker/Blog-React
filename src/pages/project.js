@@ -34,7 +34,7 @@ export default class ProjectPage extends React.Component {
         <div>
             <div className="nav-padding-project container">
                 <section className="section section-hero">
-                  <section className="grid-hero container grid-960 text-center">
+                  <section className="grid-hero container grid-lg text-center">
                     <h1 className="overview-title">{title}</h1>
                     <h2 className="overview-subtitle">{description}</h2>
                       {
@@ -51,8 +51,8 @@ export default class ProjectPage extends React.Component {
                 </section>
               {
                 id ?
-                    <div className="columns bg-grey">
-                        <div className="column col-5 centered">
+                    <div className="columns bg-primary">
+                        <div className="column col-5 centered text-light">
                             <CommentBox project={this.state}/>
                         </div>
                     </div> :

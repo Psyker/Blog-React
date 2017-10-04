@@ -27,7 +27,7 @@ export default class CommentBox extends React.Component {
             <div>
                 <h3>{this._getCommentsTitle(comments.length)}</h3>
                 <CommentForm addComment={this._addComment}/>
-                {this.state.loading ? <div className="loading loading-lg mt-1"></div> : ''}
+                {this.state.loading ? <div className="loading text-dark loading-lg mt-1"></div> : ''}
                 {comments}
             </div>
         )
@@ -49,11 +49,11 @@ export default class CommentBox extends React.Component {
 
      _getCommentsTitle(commentCount) {
         if (commentCount === 0) {
-            return 'Aucun commentaires';
+            return 'No comments';
         } else if (commentCount === 1) {
-            return '1 commentaire';
+            return `Comment (${commentCount})`;
         } else {
-            return `${commentCount} commentaires`;
+            return `Comments ${commentCount}`;
         }
     }
 

@@ -11,10 +11,11 @@ export default class App extends React.Component {
         return (
             <div>
                 <Redirect from={"/"} to={"/home"}/>
-                <Route path="/" component={Layout}/>
-                <Route path="/home" component={HomePage}/>
-                <Route path="/project/:id" component={ProjectPage}/>
-                <Route path="/login" component={LoginPage}/>
+                <Layout>
+                    <Route path="/home" component={HomePage}/>
+                    <Route path="/project/:id" component={ProjectPage}/>
+                    <Route path="/login" component={LoginPage}/>
+                </Layout>
             </div>
         )
     }

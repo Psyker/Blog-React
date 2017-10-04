@@ -20,14 +20,16 @@ export default class ProjectList extends React.Component
 
     render() {
         return (
-            <div className="container col-8 mt-2">
-                <h2 className="text-center">Portfolio</h2>
-                <div className="filter-body columns col-12">
-                    {
-                        this.state.projects.map((project) => {
-                          return <Project {...project} key={project.id}/>
-                        })
-                    }
+            <div className="section section-updates bg-gray">
+                <div className="container grid-lg">
+                    <h2 className="text-center">Portfolio</h2>
+                    <div className="columns">
+                        {
+                            this.state.projects.map((project) => {
+                            return <Project {...project} key={project.id}/>
+                            })
+                        }
+                    </div>
                 </div>
             </div>
         );
