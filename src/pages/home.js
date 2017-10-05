@@ -1,5 +1,7 @@
 import React from 'react';
 import ProjectList from "../components/ProjectList";
+import About from '../components/About';
+import Timeline from '../components/Timeline'
 
 export default class HomePage extends React.Component {
     render() {
@@ -17,7 +19,9 @@ export default class HomePage extends React.Component {
                         </div>
                     </div>
                 </div>
+                <About/>
                 <ProjectList/>
+                <Timeline/>
             </div>
         )
     }

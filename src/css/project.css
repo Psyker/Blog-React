@@ -1,5 +1,5 @@
 .card:hover {
-    box-shadow: 0 0.2rem 0.5rem rgba(69, 77, 93, .3);
+    box-shadow: .3rem 0.2rem 0.5rem rgba(69, 77, 93, .3);
 }
 
 .card {

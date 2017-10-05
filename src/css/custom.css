@@ -27,6 +27,11 @@
   font-size: 16px;
 }
 
+.text-center {
+  text-align: center;
+  text-align: -webkit-center;
+}
+
 /* Docs */
 
 /*! Spectre.css Docs | MIT License | github.com/picturepan2/spectre */

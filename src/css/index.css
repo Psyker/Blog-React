@@ -16,3 +16,7 @@ h2 {
   height: 50px;
     box-shadow: 0 0.2rem 0.5rem rgba(69, 77, 93, .1);
 }
+
+.section-footer {
+  box-shadow: 0 0.2rem 1.5rem rgba(69, 77, 93, .1);
+}
