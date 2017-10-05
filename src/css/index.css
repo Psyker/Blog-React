@@ -11,3 +11,8 @@ h2 {
 .text-dark {
   color: #5b657a
 }
+
+.navbar-center {
+  height: 50px;
+    box-shadow: 0 0.2rem 0.5rem rgba(69, 77, 93, .1);
+}

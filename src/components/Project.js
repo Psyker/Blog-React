@@ -7,15 +7,18 @@ export default class Project extends React.Component
         return(
             <div className="column col-6 col-xs-12">
                 <div className="card">
+                    <div className="card-image">
+                        <img src="http://lorempixel.com/900/506/nature" className="img-responsive"></img>
+                    </div>
                     <div className="card-header">
-                        <h4>{this.props.title}</h4>
-                        <small>
+                        <div className="card-title h5">{this.props.title}</div>
+                        <div className="card-subtitle text-gray">
                             {
                                 this.props.tags.map((tag) => {
                                     return tag.name
                                 })
                             }
-                        </small>
+                        </div>
                     </div>
                     <div className="card-body"></div>
                     <div className="card-footer">

@@ -32,7 +32,7 @@ export default class ProjectPage extends React.Component {
     const {id, description, title, tags} = this.state;
     return (
         <div>
-            <div className="nav-padding-project container">
+            <div className="container">
                 <section className="section section-hero">
                   <section className="grid-hero container grid-lg text-center">
                     <h1 className="overview-title">{title}</h1>
