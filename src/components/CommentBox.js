@@ -1,7 +1,7 @@
 import React from 'react';
 import Comment from './Comment'
 import CommentForm from "./CommentForm";
-import { _postComment } from '../api'
+import { _postComment } from '../scripts/api'
 
 export default class CommentBox extends React.Component {
     constructor () {
@@ -27,7 +27,7 @@ export default class CommentBox extends React.Component {
             <div>
                 <h3>{this._getCommentsTitle(comments.length)}</h3>
                 <CommentForm addComment={this._addComment}/>
-                {this.state.loading ? <div className="loading text-dark loading-lg mt-1"></div> : ''}
+                {this.state.loading ? <div className="loading loading-lg mt-1"></div> : ''}
                 {comments}
             </div>
         )

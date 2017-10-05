@@ -1,5 +1,5 @@
 import jQuery from 'jquery';
-import { admin_username, admin_password } from "./config/parameters.json"
+import { admin_username, admin_password } from "../config/parameters.json"
 
 export function _fetchData(type) {
   let url = `http://localhost:8000/api/${type}`;

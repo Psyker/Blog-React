@@ -1,6 +1,6 @@
 import React from 'react';
 import CommentBox from "../components/CommentBox";
-import { _fetchDataById } from '../api';
+import { _fetchDataById } from '../scripts/api';
 
 export default class ProjectPage extends React.Component {
   constructor() {

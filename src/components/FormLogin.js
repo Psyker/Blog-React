@@ -1,5 +1,5 @@
 import React from 'react';
-import { _login } from '../api'
+import { _login } from '../scripts/api'
 
 export default class FormLogin extends React.Component {
     constructor() {

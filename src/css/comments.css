@@ -6,3 +6,28 @@ h3 {
 .comment {
     margin-bottom: 10px;
 }
+
+.btn-margin {
+    margin-bottom: 20px;
+}
+
+.loading::after {
+    border: .1rem solid white;
+    border-top-color: transparent;
+    border-top-style: solid;
+    border-top-width: 0.1rem;
+    border-right-color: transparent;
+    border-right-style: solid;
+    border-right-width: 0.1rem;
+    border-bottom-color: rgb(255, 255, 255);
+    border-bottom-style: solid;
+    border-bottom-width: 0.1rem;
+    border-left-color: rgb(255, 255, 255);
+    border-left-style: solid;
+    border-left-width: 0.1rem;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import Project from "./Project";
-import { _fetchData } from '../api';
+import { _fetchData } from '../scripts/api';
 
 export default class ProjectList extends React.Component
 {
