@@ -47,10 +47,8 @@ export function _login(credentials) {
         '_username': credentials._username,
         '_password': credentials._password,
       },
-      success: (response) => {
-          localStorage.setItem('token', response.token);
-        return response
-      }
+  }).then((response) => {
+    return response
   })
 }
 

@@ -1,19 +1,39 @@
 import React from 'react';
 import { _login } from '../scripts/api'
+import $ from 'jquery'
 
 export default class FormLogin extends React.Component {
     constructor() {
         super();
+        this.state = {
+            message : null,
+            code : null
+        }
 
         this._handleLogin = this._handleLogin.bind(this);
     }
 
     render () {
+        const { message, code } = this.state
         return (
             <form onSubmit={this._handleLogin}>
-                <input type="text" name="_username" ref={c => this._username = c}/>
-                <input type="text" name="_password" ref={c => this._password = c}/>
-                <input type="submit" value="Se connecter"/>
+                {
+                    code != 200 && null !== code ?
+                    <div className="toast toast-error">
+                        {message}
+                    </div> : null
+                }
+                <div className="form-group">
+                    <label className="form-label" htmlFor="_username">Username</label>
+                    <input className="form-input" type="text" name="_username" ref={c => this._username = c}/>
+                </div>
+                <div className="form-group">
+                <label className="form-label" htmlFor="_password">Password</label>
+                    <input className="form-input" type="password" name="_password" ref={c => this._password = c}/>
+                </div>
+                <div className="form-group">
+                    <input className="btn btn-primary btn-block" type="submit" value="Se connecter"/>
+                </div>
             </form>
         )
     }
@@ -25,14 +45,18 @@ export default class FormLogin extends React.Component {
             _password: this._password.value,
         };
         _login(credentials)
+            .fail((error) => {
+                let messageError = JSON.parse(error.responseText)
+                this.setState({
+                    message : messageError.message,
+                    code: messageError.code
+                })
+            })
             .then((response) => {
-                if (response) {
-                    console.log(response)
-                }
+                console.log('oui')
+                window.location = "/admin"
             });
         this._username.value = '';
         this._password.value = '';
     }
-
-
 }

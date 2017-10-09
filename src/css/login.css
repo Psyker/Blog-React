@@ -1,0 +1,10 @@
+.block-center {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 13.5rem
+}

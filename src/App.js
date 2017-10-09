@@ -13,6 +13,7 @@ export default class App extends React.Component {
         window.location.pathname == '/login' ?
          <Route path="/login" component={LoginPage}/> :
         <div>
+            <Redirect from="/" to="/home"/>
             <Layout>
                 <Switch>
                     <Route exact path="/home" component={HomePage}/>

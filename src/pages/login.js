@@ -1,18 +1,16 @@
 import React from 'react';
 import FormLogin from '../components/FormLogin';
+import '../css/login.css'
 
 export default class LoginPage extends React.Component {
     render () {
         return (
-            <div>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <FormLogin/>
+            <div className="container grid-lg block-center">
+                <div className="columns">
+                    <div className="column">
+                        <FormLogin/>
+                    </div>
+                </div>
             </div>
         )
     }

@@ -331,15 +331,12 @@
   
   .s-brand .s-logo img {
     display: inline;
-    height: auto;
-    width: 1.6rem;
   }
   
   .s-brand .s-logo h2 {
     display: inline;
     font-size: .8rem;
     font-weight: 500;
-    margin-bottom: 0;
     margin-left: .5rem;
     margin-right: .5rem;
   }
@@ -502,7 +499,6 @@
     }
     .s-navbar {
       -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
       background: rgba(255, 255, 255, .65);
       right: 0;
       top: 0;
