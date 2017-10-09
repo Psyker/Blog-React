@@ -1,6 +1,5 @@
 import React from 'react';
 import { _login } from '../scripts/api'
-import $ from 'jquery'
 
 export default class FormLogin extends React.Component {
     constructor() {
@@ -18,7 +17,7 @@ export default class FormLogin extends React.Component {
         return (
             <form onSubmit={this._handleLogin}>
                 {
-                    code != 200 && null !== code ?
+                    code !== 200 && null !== code ?
                     <div className="toast toast-error">
                         {message}
                     </div> : null

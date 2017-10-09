@@ -7,7 +7,7 @@ export default class About extends React.Component {
                 <div className="container grid-lg">
                     <div className="columns">
                         <div className="column col-4 col-xs-12 text-center">
-                            <img src="https://avatars1.githubusercontent.com/u/17385665?v=4&s=460" className="img-responsive circle"></img>
+                            <img alt="profile" src="https://avatars1.githubusercontent.com/u/17385665?v=4&s=460" className="img-responsive circle"></img>
                         </div>
                         <div className="column col-8 col-xs-12">
                             <h2>About me</h2>

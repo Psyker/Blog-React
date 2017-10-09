@@ -8,9 +8,8 @@ import LoginPage from './pages/login';
 
 export default class App extends React.Component {
     render() {
-        const {match, location, history} = this.props
         return (
-        window.location.pathname == '/login' ?
+        window.location.pathname === '/login' ?
          <Route path="/login" component={LoginPage}/> :
         <div>
             <Redirect from="/" to="/home"/>

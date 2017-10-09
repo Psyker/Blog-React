@@ -8,7 +8,7 @@ export default class Project extends React.Component
             <div className="column col-6 col-xs-12">
                 <div className="card">
                     <div className="card-image">
-                        <img src="http://lorempixel.com/900/506/nature" className="img-responsive"></img>
+                        <img alt="thumbnail" src="http://lorempixel.com/900/506/nature" className="img-responsive"></img>
                     </div>
                     <div className="card-header">
                         <div className="card-title h5">{this.props.title}</div>
