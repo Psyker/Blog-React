@@ -5,7 +5,7 @@ export default class Project extends React.Component
 {
     render() {
         return(
-            <div className="column col-6 col-xs-12">
+            <div className="column col-4 col-xs-12">
                 <div className="card">
                     <div className="card-image">
                         <img alt="thumbnail" src="http://lorempixel.com/900/506/nature" className="img-responsive"></img>
