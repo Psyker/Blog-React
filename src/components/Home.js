@@ -1,6 +1,6 @@
 import React from 'react';
-import ProjectList from "../components/ProjectList";
-import About from '../components/About';
+import ProjectList from "./ProjectList";
+import About from './About';
 
 export default class HomePage extends React.Component {
     render() {

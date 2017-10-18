@@ -1,9 +1,8 @@
 import React from 'react';
-import Project from "./Project";
-import { _fetchData } from '../scripts/api';
+import ProjectItem from "./ProjectItem";
+import {_fetchData} from '../scripts/api';
 
-export default class ProjectList extends React.Component
-{
+export default class ProjectList extends React.Component {
     constructor() {
         super();
 
@@ -13,9 +12,9 @@ export default class ProjectList extends React.Component
     }
 
     componentDidMount() {
-      _fetchData('projects').then((projects) => {
-          this.setState({projects})
-      })
+        _fetchData('projects').then((projects) => {
+            this.setState({projects})
+        })
     }
 
     render() {
@@ -26,7 +25,7 @@ export default class ProjectList extends React.Component
                     <div className="columns">
                         {
                             this.state.projects.map((project) => {
-                            return <Project {...project} key={project.id}/>
+                                return <ProjectItem {...project} key={project.id}/>
                             })
                         }
                     </div>

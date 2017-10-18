@@ -1,25 +1,24 @@
 import React from 'react';
 
-import { Route, Redirect, Switch } from 'react-router-dom';
-import HomePage from './pages/home';
-import Layout from './layout/layout';
-import ProjectPage from './pages/project';
-import LoginPage from './pages/login';
+import {Route, Redirect, Switch} from 'react-router-dom';
+import HomePage from './components/Home';
+import Layout from './components/Layout';
+import ProjectPage from './components/Project';
+import LoginPage from './components/Login';
 
 export default class App extends React.Component {
     render() {
         return (
-        window.location.pathname === '/login' ?
-         <Route path="/login" component={LoginPage}/> :
-        <div>
-            <Redirect from="/" to="/home"/>
-            <Layout>
-                <Switch>
-                    <Route exact path="/home" component={HomePage}/>
-                    <Route path="/project/:id" component={ProjectPage}/>
-                </Switch>
-            </Layout>
-        </div> 
+            window.location.pathname === '/login' ?
+                <Route path="/login" component={LoginPage}/> :
+                <div>
+                    <Layout>
+                        <Switch>
+                            <Route exact path="/home" component={HomePage}/>
+                            <Route path="/project/:id" component={ProjectPage}/>
+                        </Switch>
+                    </Layout>
+                </div>
         )
     }
 }
