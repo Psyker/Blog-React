@@ -7,13 +7,13 @@ export default class FormLogin extends React.Component {
         this.state = {
             message : null,
             code : null
-        }
+        };
 
         this._handleLogin = this._handleLogin.bind(this);
     }
 
     render () {
-        const { message, code } = this.state
+        const { message, code } = this.state;
         return (
             <form onSubmit={this._handleLogin}>
                 {
@@ -45,14 +45,14 @@ export default class FormLogin extends React.Component {
         };
         _login(credentials)
             .fail((error) => {
-                let messageError = JSON.parse(error.responseText)
+                let messageError = JSON.parse(error.responseText);
                 this.setState({
                     message : messageError.message,
                     code: messageError.code
                 })
             })
             .then((response) => {
-                console.log('oui')
+                window.localStorage.setItem('token', response.token);
                 window.location = "/admin"
             });
         this._username.value = '';

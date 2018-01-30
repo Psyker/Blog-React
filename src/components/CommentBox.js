@@ -8,10 +8,6 @@ export default class CommentBox extends React.Component {
         comments: []
     };
 
-    constructor(props) {
-        super(props);
-    }
-
     _getCommentsTitle(commentCount) {
         if (commentCount === 0) {
             return 'No comments';

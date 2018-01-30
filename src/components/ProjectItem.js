@@ -8,7 +8,7 @@ export default class ProjectItem extends React.Component {
                 <div className="card">
                     <div className="card-image">
                         <img alt="thumbnail" src="http://lorempixel.com/900/506/nature"
-                             className="img-responsive"></img>
+                             className="img-responsive"/>
                     </div>
                     <div className="card-header">
                         <div className="card-title h5">{this.props.title}</div>
