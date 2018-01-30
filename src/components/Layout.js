@@ -17,11 +17,11 @@ export default class Layout extends React.Component {
         super(props);
 
         this.state = {
-            showModal: false
+            showModal: true
         };
 
-        this._handleShow = this._handleShow().bind(this);
-        this._handleClose = this._handleClose().bind(this);
+        this._handleShow = this._handleShow.bind(this);
+        this._handleClose = this._handleClose.bind(this);
     }
 
     _handleShow() {

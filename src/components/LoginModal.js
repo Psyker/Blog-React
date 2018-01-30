@@ -1,7 +1,8 @@
 import React from 'react';
+import ReactDOM from 'react-dom'
 import '../css/login.css'
 
-const modalRoot = document.getElementById('#modal-root');
+const modalRoot = document.getElementById('modal-root');
 
 export default class LoginModal extends React.Component {
 
