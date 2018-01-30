@@ -6,7 +6,7 @@ export default class Header extends React.Component {
         return (
             <header className="navbar bg-white">
                 <section className="navbar-center">
-                    <NavLink className="btn btn-link" to="/home">Accueil</NavLink>
+                    <NavLink className="btn btn-link" to="/">Accueil</NavLink>
                     <a className="btn btn-link" href="">Projets</a>
                     <a className="btn btn-link" href="">Twitter</a>
                     <a className="btn btn-link" href="">Github</a>

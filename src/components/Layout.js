@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import {Footer} from './Footer.js'
+import Footer from './Footer.js'
 import 'spectre.css/dist/spectre.min.css'
 import 'spectre.css/dist/spectre-icons.min.css'
 import '../css/index.css';
@@ -17,7 +17,7 @@ export default class Layout extends React.Component {
         super(props);
 
         this.state = {
-            showModal: true
+            showModal: false
         };
 
         this._handleShow = this._handleShow.bind(this);
@@ -36,7 +36,20 @@ export default class Layout extends React.Component {
     render() {
         const modal = this.state.showModal ? (
             <LoginModal>
-                <FormLogin/>
+                <div className="modal modal-sm active" id="modal-id">
+                    <a onClick={this._handleClose} class="modal-overlay" aria-label="Close"></a>
+                    <div className="modal-container">
+                        <div className="modal-header">
+                            <a onClick={this._handleClose} class="btn btn-clear float-right" aria-label="Close"></a>
+                            <div className="modal-title h5">Admin</div>
+                        </div>
+                        <div className="modal-body">
+                            <div className="content">
+                                <FormLogin/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </LoginModal>
         ) : null;
         return (
@@ -44,7 +57,7 @@ export default class Layout extends React.Component {
                 {modal}
                 <Header/>
                 {this.props.children}
-                <Footer/>
+                <Footer openModal={this._handleShow}/>
             </div>
         )
     }
